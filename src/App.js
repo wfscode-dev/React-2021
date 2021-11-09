@@ -4,6 +4,8 @@ import React, {useState} from "react";
 import './styles/App.css'
 import PostItem from "./components/PostItem";
 import PostList from "./components/PostList";
+import MyButton from "./components/UI/button/MyButton";
+import MyInput from "./components/UI/input/MyInput";
 
 function App() {
     //const [value, setValue] = useState('Text input')
@@ -13,12 +15,16 @@ function App() {
         {id:3, title:'Java', body: 'Descriptions2'}
     ])
 
+    const addNewPost = () => {
+
+    }
+
     return (
         <div className="App">
             <form>
-                <input type="text" placeholder="Название"/>
-                <input type="text" placeholder="Описание"/>
-                <button type="submit">Создать пост</button>
+                <MyInput type="text" placeholder="Название"/>
+                <MyInput type="text" placeholder="Описание"/>
+                <MyButton onClick={addNewPost}>Добавить пост</MyButton>
             </form>
             <PostList posts={posts} title={"Списочек"}/>
         </div>
